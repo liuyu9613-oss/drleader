@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Leader · 陈卓博士团队</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-mark">Dr</div>
+    <span class="nav-logo-text">Dr. Leader</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">团队介绍</a></li>
+    <li><a href="#services">服务体系</a></li>
+    <li><a href="#team">核心专家</a></li>
+    <li><a href="#cases">服务案例</a></li>
+    <li><a href="#why">我们的优势</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">预约咨询</a>
+</nav>
+
+<!-- HERO CHAT -->
+<div class="hero-chat" id="home">
+  <div class="hero-chat-inner">
+    <div class="hero-brand">
+      <div class="hero-brand-mark">Dr</div>
+      <span class="hero-brand-name">Dr. Leader</span>
+    </div>
+    <h1 class="hero-chat-title">可以为您提供的<em>服务</em></h1>
+    <p class="hero-chat-sub">向 AI 顾问提问，了解团队服务、专家背景或合作方式</p>
+
+    <div class="hero-chat-box" id="hero-chat-box">
+      <div class="hero-messages" id="chat-messages"></div>
+      <div class="hero-input-wrap">
+        <textarea
+          class="hero-input"
+          id="chat-input"
+          rows="1"
+          placeholder="输入您的问题，按 Enter 发送…"
+          onkeydown="handleKey(event)"
+          oninput="autoResize(this)"
+        ></textarea>
+        <button class="hero-send" id="send-btn" onclick="sendMessage()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-suggestions" id="suggestions">
+      <button class="hero-sug" onclick="sendSuggestion(this)">CTDM 四位一体是什么？</button>
+      <button class="hero-sug" onclick="sendSuggestion(this)">AI 落地咨询服务介绍</button>
+      <button class="hero-sug" onclick="sendSuggestion(this)">陈卓教授的研究背景</button>
+      <button class="hero-sug" onclick="sendSuggestion(this)">如何开始合作？</button>
+    </div>
+
+    <a href="#services" class="hero-scroll-hint">
+      了解更多
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- CTDM -->
+<div class="full-section" id="services">
+<section>
+  <div class="section-label">服务体系</div>
+  <h2 class="section-title">CTDM <em>四位一体</em><br>全价值链生态服务</h2>
+  <p class="section-sub">四大板块协同联动，构建"导航 — 赋能 — 工具 — 声量"的完整服务生态</p>
+  <div class="ctdm-grid">
+    <div class="ctdm-card">
+      <div class="ctdm-letter">C</div>
+      <div class="ctdm-title">管理咨询</div>
+      <div class="ctdm-pos">导航系统 · 企业发展的方向盘</div>
+      <div class="ctdm-desc">从战略顶层设计到资本落地，为企业在不确定性中锁定确定性增长</div>
+      <div class="ctdm-tags">
+        <span class="ctdm-tag">战略与组织咨询</span>
+        <span class="ctdm-tag">卓越运营与供应链</span>
+        <span class="ctdm-tag">战略与资本规划</span>
+      </div>
+    </div>
+    <div class="ctdm-card">
+      <div class="ctdm-letter">T</div>
+      <div class="ctdm-title">人才发展</div>
+      <div class="ctdm-pos">加速引擎 · 组织能力的助推器</div>
+      <div class="ctdm-desc">让人才发展从"成本中心"成为"战略资本"，构建分层分类培养路径</div>
+      <div class="ctdm-tags">
+        <span class="ctdm-tag">人才发展咨询</span>
+        <span class="ctdm-tag">场景化实战培训</span>
+        <span class="ctdm-tag">智能化在线学习平台</span>
+      </div>
+    </div>
+    <div class="ctdm-card">
+      <div class="ctdm-letter">D</div>
+      <div class="ctdm-title">数字科技</div>
+      <div class="ctdm-pos">基础设施 · 数字化转型的底座</div>
+      <div class="ctdm-desc">咨询引领的 AI 落地，先帮您想清楚"为什么用"，再交付能落地的技术系统</div>
+      <div class="ctdm-tags">
+        <span class="ctdm-tag">AI 落地咨询</span>
+        <span class="ctdm-tag">大模型本地化部署</span>
+        <span class="ctdm-tag">多智能体协同系统</span>
+      </div>
+    </div>
+    <div class="ctdm-card">
+      <div class="ctdm-letter">M</div>
+      <div class="ctdm-title">传媒营销</div>
+      <div class="ctdm-pos">扩音器 · 品牌价值的放大器</div>
+      <div class="ctdm-desc">与咨询、科技服务深度协同，为企业品牌价值与资本市场沟通提供支撑</div>
+      <div class="ctdm-tags">
+        <span class="ctdm-tag">品牌战略与资产管理</span>
+        <span class="ctdm-tag">数字化全域营销</span>
+        <span class="ctdm-tag">公关活动与生态链接</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="img-banner img-slot">
+    <div class="img-slot-inner">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>团队 / 服务全景展示图</span>
+    </div>
+  </div>
+
+</section>
+</div>
+
+<!-- LEADER -->
+<div class="full-section" id="about">
+<section>
+  <div class="section-label">首席顾问</div>
+  <div class="leader-layout">
+    <div class="leader-photo-wrap">
+      <div class="leader-photo">
+        <div class="leader-photo-placeholder">陈</div>
+      </div>
+      <div class="leader-badge">
+        <div class="leader-badge-name">陈卓 教授</div>
+        <div class="leader-badge-title">首席顾问 · 应用经济学博士</div>
+      </div>
+    </div>
+    <div class="leader-body">
+      <h2 class="section-title"><em>产学研</em>融合<br>深度陪伴式咨询</h2>
+      <div class="divider-line"></div>
+      <p class="leader-intro">
+        深耕产业经济与企业战略管理领域十余年，为央企、国有平台及拟上市企业提供从战略规划到资本落地的全程陪伴式咨询。中、韩、美三国学术与实战背景，熟悉东亚产业生态与跨境合作。
+      </p>
+      <div class="leader-roles">
+        <div class="leader-role"><div class="leader-role-dot"></div>山东大学研究员 · MBA教育中心（青岛）主任</div>
+        <div class="leader-role"><div class="leader-role-dot"></div>深圳市、青岛市、温州市政府 特聘顾问</div>
+        <div class="leader-role"><div class="leader-role-dot"></div>浙江省海洋经济发展厅 特聘专家</div>
+        <div class="leader-role"><div class="leader-role-dot"></div>中国电子信息集团等多家央企 高级顾问</div>
+        <div class="leader-role"><div class="leader-role-dot"></div>国家广电总局研究中心 · 农业农村部 智库专家</div>
+        <div class="leader-role"><div class="leader-role-dot"></div>韩国三星集团人力资源开发院 顾问</div>
+        <div class="leader-role"><div class="leader-role-dot"></div>成均馆大学 EMBA 特聘教授</div>
+        <div class="leader-role"><div class="leader-role-dot"></div>新加坡南洋理工大学 博士联合培养导师</div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- SERVICES DETAIL -->
+<div class="full-section">
+<section>
+  <div class="section-label">管理咨询 · C</div>
+  <h2 class="section-title">从战略到<em>执行</em><br>全链条咨询服务</h2>
+  <p class="section-sub">依托"产学研"双模智库与丰富的产业资源网络，不止于方案，更陪伴企业完成从决策到落地的全过程</p>
+
+  <div class="img-split">
+    <div class="img-slot">
+      <div class="img-slot-inner">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>管理咨询场景图</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:16px">
+      <div style="font-size:13px;color:var(--text2);line-height:1.9">依托"产学研"双模智库与丰富的产业资源网络，不止于方案，更陪伴企业完成从决策到落地的全过程。</div>
+      <a href="#contact" class="btn-primary" style="align-self:flex-start;border-radius:100px;padding:10px 24px;font-size:13px">预约咨询</a>
+    </div>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-num">01</span>
+      <div class="service-title">战略与组织咨询</div>
+      <div class="service-tagline">夯实根基 · 让方向更清晰</div>
+      <ul class="service-list">
+        <li>战略顶层设计与赛道选择</li>
+        <li>增长路径与第二曲线设计</li>
+        <li>组织架构进化与决策机制</li>
+        <li>管理诊断与效能提升</li>
+        <li>OKR 与激励体系设计</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <span class="service-num">02</span>
+      <div class="service-title">卓越运营与供应链</div>
+      <div class="service-tagline">降本提效 · 让运营更敏捷</div>
+      <ul class="service-list">
+        <li>端到端业务流程架构重塑</li>
+        <li>敏捷供应链与协同机制构建</li>
+        <li>质量精益与战略成本管控</li>
+        <li>全面风险管理与合规治理</li>
+        <li>ESG 与可持续发展辅导</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <span class="service-num">03</span>
+      <div class="service-title">战略与资本规划</div>
+      <div class="service-tagline">对接资本 · 让上市更顺畅</div>
+      <ul class="service-list">
+        <li>上市路径规划</li>
+        <li>公司治理规范化</li>
+        <li>引入战略投资人</li>
+        <li>产业链并购整合咨询</li>
+        <li>IPO 前合规体系搭建与预辅导</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- TEAM -->
+<div class="full-section" id="team">
+<section>
+  <div class="section-label">核心团队</div>
+  <h2 class="section-title">产学研融合的<em>精英智库</em></h2>
+  <p class="section-sub">为企业提供从战略到落地的全程陪伴</p>
+
+  <div class="team-experts">
+    <div class="team-card has-photo team-lg">
+      <div class="team-photo">戈</div>
+      <div class="team-name">戈云天 博士</div>
+      <div class="team-role">首席咨询师</div>
+      <div class="team-bio">美国伊利诺伊大学博士，10年企业管理与咨询经验，MBB顶尖咨询公司实操经验</div>
+    </div>
+    <div class="team-card has-photo team-lg">
+      <div class="team-photo">胡</div>
+      <div class="team-name">胡鹏飞 教授</div>
+      <div class="team-role">首席技术专家</div>
+      <div class="team-bio">山东大学教授、博士生导师，山东省优青，网络安全、人工智能安全、移动计算专家</div>
+    </div>
+    <div class="team-card has-photo team-lg">
+      <div class="team-photo">杜</div>
+      <div class="team-name">杜现平 博士</div>
+      <div class="team-role">海洋工程专家</div>
+      <div class="team-bio">中山大学"百人计划"副教授、博士生导师，海洋工程结构安全与监测技术</div>
+    </div>
+  </div>
+
+  <div class="team-delivery">
+    <div class="team-card has-photo team-sm">
+      <div class="team-photo">刘</div>
+      <div class="team-name">刘天翼</div>
+      <div class="team-role">高级咨询师</div>
+      <div class="team-bio">前世界500强高级经理，头部咨询公司高级顾问，8年运营管理与咨询经验</div>
+    </div>
+    <div class="team-card has-photo team-sm">
+      <div class="team-photo">明</div>
+      <div class="team-name">明德平</div>
+      <div class="team-role">投资并购顾问</div>
+      <div class="team-bio">注册税务师，资产重组与财税咨询</div>
+    </div>
+    <div class="team-card has-photo team-sm">
+      <div class="team-photo">王</div>
+      <div class="team-name">王诚宇</div>
+      <div class="team-role">数字化技术顾问</div>
+      <div class="team-bio">资深Java工程师，数字化建设技术顾问，AI系统架构与部署</div>
+    </div>
+    <div class="team-card has-photo team-sm">
+      <div class="team-photo">项</div>
+      <div class="team-name">项泽逸</div>
+      <div class="team-role">组织发展顾问</div>
+      <div class="team-bio">企业管理培训师，引导师，美世认证组织发展官</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- CASES -->
+<div class="full-section" id="cases">
+<section>
+  <div class="section-label">服务案例</div>
+  <h2 class="section-title">部分服务客户</h2>
+  <p class="section-sub">覆盖央企国企、金融机构、制造业、科技企业等多行业领域</p>
+
+  <div class="cases-layout">
+    <div class="cases-tabs">
+      <div class="cases-tab active" onclick="switchTab(this,'consulting')">管理咨询</div>
+      <div class="cases-tab" onclick="switchTab(this,'talent')">人才发展</div>
+      <div class="cases-tab" onclick="switchTab(this,'digital')">数字科技</div>
+    </div>
+    <div class="cases-content" id="cases-content">
+      <div class="cases-content-title">战略 · 组织 · 资本</div>
+      <div class="cases-items" id="cases-items"></div>
+    </div>
+  </div>
+
+  <div class="img-strip img-slot img-slot-dark">
+    <div class="img-slot-inner">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>服务客户 / 项目现场图</span>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- WHY -->
+<div class="full-section" id="why">
+<section>
+  <div class="section-label">为什么选择我们</div>
+  <h2 class="section-title">我们的<em>差异化</em>优势</h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <div class="why-title">"产学研"双模智库</div>
+      <div class="why-tagline">理论高度 + 实战深度</div>
+      <div class="why-desc">汇聚国内外顶尖高校教授与世界500强实战高管。核心团队全员硕士以上学历，70% 为 MBA 精英，多位成员拥有 MBB 等顶尖咨询公司经验。</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <div class="why-title">"四位一体"生态协同</div>
+      <div class="why-tagline">一站式终局方案</div>
+      <div class="why-desc">打破传统咨询边界，构建"管理咨询定方向 + 人才赋能强执行 + 数字科技固流程 + 传媒营销扩声量"的业务闭环，实现价值链的指数级增长。</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <div class="why-title">咨询引领的科技底座</div>
+      <div class="why-tagline">MBA 视角的架构师</div>
+      <div class="why-desc">不是纯技术外包，而是先理顺业务逻辑、再固化为技术系统。自主研发的智能化工具与数据决策平台，构成长期可持续的技术护城河。</div>
+    </div>
+  </div>
+
+  <div class="img-pair">
+    <div class="img-slot">
+      <div class="img-slot-inner">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>团队合作 / 交付场景图</span>
+      </div>
+    </div>
+    <div class="img-slot img-slot-dark">
+      <div class="img-slot-inner">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>战略咨询 / 数字科技图</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- CTA -->
+<div class="cta-section" id="contact">
+  <div class="section-label" style="margin-bottom:20px;color:var(--text3)">开始合作</div>
+  <h2 class="cta-title">智创<em>价值</em> · 数造<em>未来</em><br>众航期待与您同行</h2>
+  <p class="cta-sub">预约咨询，与我们的专家团队深入探讨您的企业发展课题</p>
+  <div class="hero-btns">
+    <a href="mailto:contact@drleader.com" class="btn-primary">预约咨询</a>
+    <a href="#services" class="btn-ghost">了解服务体系</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2026 Dr. Leader · 陈卓博士团队 · 版权所有</div>
+  <div class="footer-slogan">智 创 价 值 · 数 造 未 来</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
