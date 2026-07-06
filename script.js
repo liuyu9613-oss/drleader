@@ -91,6 +91,7 @@ function appendMsg(role, text, loading) {
 
 function stripMd(s) {
   return s
+    .replace(/<think[\s\S]*?<\/think>\s*/gi, '')
     .replace(/#{1,6}\s*/g, '')
     .replace(/\*{1,3}([^*]+)\*{1,3}/g, '$1')
     .replace(/^[\s]*[-•]\s+/gm, '')
