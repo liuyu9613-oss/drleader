@@ -105,10 +105,13 @@ git commit -m "初始提交：Dr. Leader 官网"
 
 在同一页面下方 **Environment Variables** 区域：
 
-1. Name 填：`ANTHROPIC_API_KEY`
-2. Value 填：你的 Anthropic API Key（以 `sk-ant-` 开头）
+1. Name 填：`LLM_API_KEY`
+2. Value 填：你的 LLM 服务 API Key
 3. 点击 **Add**
-4. 确认添加后，点击 **Deploy**
+4. 继续添加：`LLM_API_BASE`，Value 填 `https://llm.chudian.site/v1`
+5. 继续添加：`LLM_MODEL`，Value 填 `minimax-m2.7`
+6. 可选添加：`LLM_MAX_TOKENS`，Value 填 `500`
+7. 确认添加后，点击 **Deploy**
 
 部署大约需要 30-60 秒。
 
@@ -127,7 +130,6 @@ git commit -m "初始提交：Dr. Leader 官网"
 
 - [ ] 导航栏各锚点跳转正常
 - [ ] CTDM 四位一体展示正常
-- [ ] 首席顾问介绍正常
 - [ ] 管理咨询服务详情正常
 - [ ] 核心团队 7 人展示正常
 - [ ] 服务案例三个标签切换正常
@@ -197,9 +199,10 @@ Vercel 自动部署，30 秒内生效。
 ## 常见问题
 
 ### Q: AI 对话返回"网络异常"
-1. 检查 Vercel 环境变量 `ANTHROPIC_API_KEY` 是否正确设置
-2. 在 Vercel Dashboard → Functions 日志中查看错误详情
-3. 确认 API Key 有效且有余额
+1. 检查 Vercel 环境变量 `LLM_API_KEY` 是否正确设置
+2. 检查 `LLM_API_BASE` 和 `LLM_MODEL` 是否和模型服务商提供的一致
+3. 在 Vercel Dashboard → Functions 日志中查看错误详情
+4. 确认 API Key 有效且有余额
 
 ### Q: 页面样式错乱
 1. 确认 `style.css` 和 `script.js` 与 `index.html` 在同一目录

@@ -927,6 +927,9 @@ footer {
 }
 .img-slot:hover { border-color: rgba(0,0,0,0.18); background: var(--bg4); }
 .img-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.img-slot.has-image { border: none; background: #111; cursor: default; }
+.img-slot.has-image:hover { background: #111; }
+.img-slot.has-image .img-slot-inner { display: none; }
 .img-slot-inner {
   display: flex; flex-direction: column; align-items: center;
   gap: 8px; padding: 20px; z-index: 1; pointer-events: none;
@@ -945,7 +948,7 @@ footer {
 .img-split-rev > * { direction: ltr; }
 .img-strip { aspect-ratio: 21/7; border-radius: 16px; margin-top: 48px; }
 .img-pair { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; margin-top: 48px; }
-.img-pair .img-slot:first-child { aspect-ratio: 16/9; }
+.img-pair .img-slot:first-child { aspect-ratio: 3/2; }
 .img-pair .img-slot:last-child { aspect-ratio: 3/4; border-radius: 12px; }
 
 /* ─── RESPONSIVE ─── */

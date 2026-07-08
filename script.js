@@ -58,7 +58,7 @@ function switchTab(el, key) {
 switchTab(document.querySelector('.cases-tab'), 'consulting');
 
 // ─── AI CHAT ───
-const history = [];
+const chatHistory = [];
 let isLoading = false;
 
 function autoResize(el) {
@@ -119,29 +119,37 @@ async function sendMessage() {
   input.style.height = 'auto';
 
   appendMsg('user', text);
-  history.push({ role: 'user', content: text });
+  chatHistory.push({ role: 'user', content: text });
   const aiEl = appendMsg('ai', '', true);
 
   try {
     const res = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: history })
+      body: JSON.stringify({ messages: chatHistory })
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || '请求失败');
     const reply = data.reply || '抱歉，暂时无法回复，请稍后再试。';
-    history.push({ role: 'assistant', content: reply });
+    chatHistory.push({ role: 'assistant', content: reply });
     aiEl.innerHTML = escapeHtml(reply);
     document.getElementById('chat-messages').scrollTop = 9999;
   } catch(e) {
-    aiEl.innerHTML = '网络异常，请稍后重试。';
+    aiEl.innerHTML = escapeHtml(e.message || '网络异常，请稍后重试。');
   }
 
   isLoading = false;
   document.getElementById('send-btn').disabled = false;
   input.focus();
 }
+
+Object.assign(window, {
+  autoResize,
+  handleKey,
+  sendMessage,
+  sendSuggestion,
+  switchTab,
+});
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
